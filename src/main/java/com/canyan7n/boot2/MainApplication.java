@@ -9,6 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
@@ -33,6 +34,12 @@ public class MainApplication {
             System.out.println(name);
         }
 
+        int count = run.getBeanDefinitionCount();
+        System.out.println(count);
+
+        String[] beanNamesForType = run.getBeanNamesForType(WebMvcProperties.class);
+        System.out.println("WebMvcProperties=" + beanNamesForType.length);
+
         // User user = run.getBean(User.class);
         // User user1 = run.getBean(User.class);
         // System.out.println("是否单例" + (user == user1));
@@ -54,19 +61,18 @@ public class MainApplication {
         // SQLBuilder bean = run.getBean(SQLBuilder.class);
         // System.out.println(bean);
 
-        boolean tom1 = run.containsBean("tom1");
-        System.out.println("tom1组件："  + tom1);
-
-        boolean tom = run.containsBean("tom");
-        System.out.println("tom组件："  + tom);
-
-        boolean user01 = run.containsBean("user01");
-        System.out.println("user01组件："  + user01);
-
-        boolean haha = run.containsBean("haha");
-        System.out.println("haha:" + haha);
-        boolean hehe = run.containsBean("hehe");
-        System.out.println("hehe:" + hehe);
-
+        // boolean tom1 = run.containsBean("tom1");
+        // System.out.println("tom1组件："  + tom1);
+        //
+        // boolean tom = run.containsBean("tom");
+        // System.out.println("tom组件："  + tom);
+        //
+        // boolean user01 = run.containsBean("user01");
+        // System.out.println("user01组件："  + user01);
+        //
+        // boolean haha = run.containsBean("haha");
+        // System.out.println("haha:" + haha);
+        // boolean hehe = run.containsBean("hehe");
+        // System.out.println("hehe:" + hehe);
     }
 }
