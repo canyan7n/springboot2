@@ -1,0 +1,21 @@
+person:
+  userName: 张三
+  age: 18
+  boss: true
+  birth: 2000/10/14
+  hobby:
+    - 唱
+    - 跳
+    - rap
+    - 篮球
+  animal: [阿猫,阿狗,阿晟]
+  score:
+    english: 80
+    math: 90
+    chinese: 85
+  pet:
+    name: 小颜
+  allPet:
+    sick: [{name: 李四},{name: 王五}]
+    health:
+      - {name: 赵六}
