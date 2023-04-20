@@ -1,5 +1,9 @@
 package com.canyan7n.boot2.pojo;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
@@ -13,41 +17,14 @@ import org.springframework.stereotype.Controller;
  */
 // @Component
 @ConfigurationProperties(prefix = "car")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class Car {
 
     private String brand;
 
     private Integer price;
 
-    @Override
-    public String toString() {
-        return "Car{" +
-                "brand='" + brand + '\'' +
-                ", price=" + price +
-                '}';
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public Integer getPrice() {
-        return price;
-    }
-
-    public void setPrice(Integer price) {
-        this.price = price;
-    }
-
-    public Car(String brand, Integer price) {
-        this.brand = brand;
-        this.price = price;
-    }
-
-    public Car() {
-    }
 }
