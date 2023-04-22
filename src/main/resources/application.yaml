@@ -19,3 +19,14 @@ person:
     sick: [{name: 李四},{name: 王五}]
     health:
       - {name: 赵六}
+
+
+spring:
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  #    static-path-pattern: /res/**
+  resources:
+    static-locations: classpath:/aaa/
+    add-mappings: true

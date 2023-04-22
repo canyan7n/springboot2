@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>f</title>
+</head>
+<body>
+<h1>index.html</h1>
+<form action="/user" method="get">
+    <input type="submit" value="测试Get">
+</form>
+<form action="/user" method="post">
+    <input type="submit" value="测试post">
+</form>
+<form action="/user" method="post">
+    <input type="hidden" name="_m" value="put">
+    <input type="submit" value="测试put">
+</form>
+<form action="/user" method="post">
+    <input type="hidden" name="_m" value="delete">
+    <input type="submit" value="测试delete">
+</form>
+</body>
+</html>

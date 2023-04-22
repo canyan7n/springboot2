@@ -29,16 +29,16 @@ public class MainApplication {
     public static void main(String[] args) {
 
         ConfigurableApplicationContext run = SpringApplication.run(MainApplication.class, args);
-        String[] names = run.getBeanDefinitionNames();
-        for (String name : names) {
-            System.out.println(name);
-        }
-
-        int count = run.getBeanDefinitionCount();
-        System.out.println(count);
-
-        String[] beanNamesForType = run.getBeanNamesForType(WebMvcProperties.class);
-        System.out.println("WebMvcProperties=" + beanNamesForType.length);
+        // String[] names = run.getBeanDefinitionNames();
+        // for (String name : names) {
+        //     System.out.println(name);
+        // }
+        //
+        // int count = run.getBeanDefinitionCount();
+        // System.out.println(count);
+        //
+        // String[] beanNamesForType = run.getBeanNamesForType(WebMvcProperties.class);
+        // System.out.println("WebMvcProperties=" + beanNamesForType.length);
 
         // User user = run.getBean(User.class);
         // User user1 = run.getBean(User.class);
