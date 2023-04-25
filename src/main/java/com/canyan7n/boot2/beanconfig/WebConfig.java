@@ -25,22 +25,22 @@ public class WebConfig implements WebMvcConfigurer {
         return methodFilter;
     }
 
-    @Bean
-    public WebMvcConfigurer webMvcConfigurer(){
-
-        return new WebMvcConfigurer(){
-            @Override
-            public void configurePathMatch(PathMatchConfigurer configurer) {
-                UrlPathHelper urlPathHelper = new UrlPathHelper();
-                urlPathHelper.setRemoveSemicolonContent(false);
-                configurer.setUrlPathHelper(urlPathHelper);
-            }
-        };
-    }
-    // @Override
-    // public void configurePathMatch(PathMatchConfigurer configurer) {
-    //     UrlPathHelper urlPathHelper = new UrlPathHelper();
-    //     urlPathHelper.setRemoveSemicolonContent(false);
-    //     configurer.setUrlPathHelper(urlPathHelper);
+    // @Bean
+    // public WebMvcConfigurer webMvcConfigurer(){
+    //
+    //     // return new WebMvcConfigurer(){
+    //     //     @Override
+    //     //     public void configurePathMatch(PathMatchConfigurer configurer) {
+    //     //         UrlPathHelper urlPathHelper = new UrlPathHelper();
+    //     //         urlPathHelper.setRemoveSemicolonContent(false);
+    //     //         configurer.setUrlPathHelper(urlPathHelper);
+    //     //     }
+    //     // };
     // }
+    @Override
+    public void configurePathMatch(PathMatchConfigurer configurer) {
+        UrlPathHelper urlPathHelper = new UrlPathHelper();
+        urlPathHelper.setRemoveSemicolonContent(false);
+        configurer.setUrlPathHelper(urlPathHelper);
+    }
 }

@@ -1,11 +1,9 @@
 package com.canyan7n.boot2.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.MatrixVariable;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,14 +31,15 @@ public class MatrixController {
     }
 
     // /boss/bossid;age=10/empid;age=20
-    @RequestMapping("/boss/{bossId}")
-    public Map testBoss(@PathVariable("bossId") Integer bossId,
+    @RequestMapping("/boss/{bossId}/{empId}")
+    public Map testBoss(/*@PathVariable("boss") String path,*/
                         @MatrixVariable(value = "age",pathVar = "boosId") Integer bossAge,
                         @MatrixVariable(value = "age",pathVar = "empId") Integer empAge){
         HashMap<String, Object> hashMap = new HashMap<>();
         hashMap.put("bossAge",bossAge);
         hashMap.put("empAge",empAge);
-        hashMap.put("bossId",bossId);
+        // hashMap.put("boss",path);
+        System.out.println(hashMap);
         return hashMap;
     }
 }
