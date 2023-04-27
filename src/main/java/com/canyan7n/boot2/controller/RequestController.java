@@ -33,12 +33,12 @@ public class RequestController {
 
     @ResponseBody
     @RequestMapping("/success")
-    public Map successPage(@RequestAttribute("msg") String msg,
+    public Map successPage(@RequestAttribute(value = "msg") String msg,
                            HttpServletRequest request){
 
-        Object code = request.getAttribute("code");
         HashMap<String, Object> hashMap = new HashMap<>();
-        // hashMap.put("annotation_msg",msg);
+        hashMap.put("annotation_msg",msg);
+        // Object code = request.getAttribute("code");
         // hashMap.put("request_msg",code);
         Object hello = request.getAttribute("hello");
         Object world = request.getAttribute("world");
@@ -58,7 +58,7 @@ public class RequestController {
                           HttpServletResponse response){
 
         map.put("hello","hello666");
-        model.addAttribute("wordl","world666");
+        model.addAttribute("world","world666");
         request.setAttribute("msg","hellowordld");
         Cookie cookie = new Cookie("k1", "v1");
         response.addCookie(cookie);
