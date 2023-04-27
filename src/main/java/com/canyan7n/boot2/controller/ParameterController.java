@@ -1,5 +1,6 @@
 package com.canyan7n.boot2.controller;
 
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.ServletContext;
@@ -50,4 +51,5 @@ public class ParameterController {
         hashMap.put("userContent",userContent);
         return hashMap;
     }
+
 }
