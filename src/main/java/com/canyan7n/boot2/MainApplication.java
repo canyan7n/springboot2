@@ -21,7 +21,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @description：主程序类
  */
 @SpringBootApplication
-// @ComponentScan("com.canyan7n.boot2.controller")
+// @ComponentScan(value = "com.canyan7n.boot2.controller")
 //     @SpringBootConfiguration
 //     @EnableAutoConfiguration
 //     @ComponentScan("com.canyan7n.boot2")
@@ -29,10 +29,10 @@ public class MainApplication {
     public static void main(String[] args) {
 
         ConfigurableApplicationContext run = SpringApplication.run(MainApplication.class, args);
-        // String[] names = run.getBeanDefinitionNames();
-        // for (String name : names) {
-        //     System.out.println(name);
-        // }
+        String[] names = run.getBeanDefinitionNames();
+        for (String name : names) {
+            System.out.println(name);
+        }
         //
         // int count = run.getBeanDefinitionCount();
         // System.out.println(count);
@@ -63,7 +63,7 @@ public class MainApplication {
 
         // boolean tom1 = run.containsBean("tom1");
         // System.out.println("tom1组件："  + tom1);
-        //
+        // //
         // boolean tom = run.containsBean("tom");
         // System.out.println("tom组件："  + tom);
         //
@@ -74,5 +74,9 @@ public class MainApplication {
         // System.out.println("haha:" + haha);
         // boolean hehe = run.containsBean("hehe");
         // System.out.println("hehe:" + hehe);
+
+        Car bean = run.getBean(Car.class);
+        System.out.println(bean.getBrand());
+        System.out.println(bean.getPrice());
     }
 }
