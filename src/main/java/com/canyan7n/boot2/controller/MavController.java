@@ -36,13 +36,13 @@ public class MavController {
     @RequestMapping("/api/complete")
     @ResponseBody
     public Map testApi(HttpServletRequest request){
-        HashMap<Object, Object> hashMap = new HashMap<>();
+        HashMap<Object, Object> map = new HashMap<>();
         Object reqMsg = request.getAttribute("reqMsg");
         Object mapMsg = request.getAttribute("mapMsg");
         Object modelMsg = request.getAttribute("modelMsg");
-        hashMap.put("reqMsg",reqMsg);
-        hashMap.put("mapMsg",mapMsg);
-        hashMap.put("modelMsg",modelMsg);
-        return hashMap;
+        map.put("reqMsg",reqMsg);
+        map.put("mapMsg",mapMsg);
+        map.put("modelMsg",modelMsg);
+        return map;
     }
 }
