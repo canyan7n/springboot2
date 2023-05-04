@@ -1,5 +1,6 @@
 package com.canyan7n.boot2.controller;
 
+import com.canyan7n.boot2.pojo.Person;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -50,6 +51,12 @@ public class ParameterController {
         HashMap<String, Object> hashMap = new HashMap<>();
         hashMap.put("userContent",userContent);
         return hashMap;
+    }
+
+    //自定义参数
+    @PostMapping("/saveperson")
+    public Person myDesignParameter(Person person){
+        return person;
     }
 
 }

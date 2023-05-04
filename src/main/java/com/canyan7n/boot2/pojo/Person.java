@@ -27,10 +27,10 @@ public class Person {
     private String userName;
     private Integer age;
     private Boolean boss;
-    private Date birth;
+    // private Date birth;
     private String[] hobby;
     private List animal;
-    private Map<String,Object> score;
-    private Pet pet;
-    private Map<String,List<Pet>> allPet;
+    // private Map<String,Object> score;
+    // private Pet pet;
+    // private Map<String,List<Pet>> allPet;
 }
