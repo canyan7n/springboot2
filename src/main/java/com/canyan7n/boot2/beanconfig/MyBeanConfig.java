@@ -35,8 +35,8 @@ public class MyBeanConfig {
         return new User("zhangsan",11);
     }
     //
-    @Bean("tom")
-    public Pet pet01(){
-        return new Pet("tom01");
-    }
+    // @Bean("tom")
+    // public Pet pet01(){
+    //     return new Pet("tom01");
+    // }
 }

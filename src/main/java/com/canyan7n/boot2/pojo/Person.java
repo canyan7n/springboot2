@@ -30,6 +30,7 @@ public class Person {
     // private Date birth;
     private String[] hobby;
     private List animal;
+    private Pet pet;
     // private Map<String,Object> score;
     // private Pet pet;
     // private Map<String,List<Pet>> allPet;
