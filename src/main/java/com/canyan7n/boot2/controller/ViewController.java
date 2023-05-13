@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class ViewController {
 
-    @RequestMapping(value = "/")
+    @RequestMapping(value = {"/","/login"})
     public String login(){
         return "login";
     }
@@ -33,11 +33,22 @@ public class ViewController {
     public String loginSuccess(LoginUser loginUser, HttpSession session, Model model){
         System.out.println(loginUser);
         if(!StringUtils.isEmpty(loginUser) && "123".equals(loginUser.getPassword())){
-            model.addAttribute("loginUser",loginUser);
             session.setAttribute("loginUser",loginUser);
-            return "main";
+            return "redirect:/main";
         }else {
             model.addAttribute("msg","密码错误");
+            return "login";
+        }
+    }
+
+    @RequestMapping("/main")
+    public String main(HttpSession session,Model model){
+        Object loginUser = session.getAttribute("loginUser");
+        if (loginUser != null){
+            model.addAttribute("loginUser",loginUser);
+            return "main";
+        }else {
+            model.addAttribute("msg","未登录");
             return "login";
         }
     }
