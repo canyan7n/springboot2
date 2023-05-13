@@ -30,3 +30,7 @@ spring:
   resources:
     static-locations: classpath:/aaa/
     add-mappings: true
+
+server:
+  servlet:
+    context-path: /
