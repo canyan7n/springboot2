@@ -23,8 +23,8 @@ public class LoginInterceptor implements HandlerInterceptor {
         if (loginUser != null){
             return true;
         }
-        session.setAttribute("msg","未登录");
-        response.sendRedirect("/");
+        request.setAttribute("msg","请先登录");
+        request.getRequestDispatcher("/").forward(request,response);
         return false;
     }
 
