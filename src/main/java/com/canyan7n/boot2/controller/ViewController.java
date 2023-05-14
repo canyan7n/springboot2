@@ -42,14 +42,7 @@ public class ViewController {
     }
 
     @RequestMapping("/main")
-    public String main(HttpSession session,Model model){
-        Object loginUser = session.getAttribute("loginUser");
-        if (loginUser != null){
-            model.addAttribute("loginUser",loginUser);
-            return "main";
-        }else {
-            model.addAttribute("msg","未登录");
-            return "login";
-        }
+    public String main(){
+        return "main";
     }
 }
