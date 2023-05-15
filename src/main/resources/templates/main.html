@@ -5,6 +5,11 @@
     <title>Title</title>
 </head>
 <body>
-<h1 th:text="${loginUser.userName}">用户名</h1>
+<!--<h1 th:text="${loginUser.userName}">用户名</h1>-->
+<form th:action="@{/upload}" method="post" enctype="multipart/form-data">
+    头像:<input type="file" name="headerImg"><br>
+    生活照:<input type="file" name="photos" multiple><br>
+    <input type="submit" value="提交">
+</form>
 </body>
 </html>

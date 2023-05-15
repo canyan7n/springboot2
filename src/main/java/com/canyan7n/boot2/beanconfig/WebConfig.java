@@ -23,12 +23,12 @@ import org.springframework.web.util.UrlPathHelper;
 @Configuration(proxyBeanMethods = false)
 public class WebConfig implements WebMvcConfigurer {
 
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginInterceptor())
-                .addPathPatterns("/**")
-                .excludePathPatterns("/","/login");
-    }
+    // @Override
+    // public void addInterceptors(InterceptorRegistry registry) {
+    //     registry.addInterceptor(new LoginInterceptor())
+    //             .addPathPatterns()
+    //             .excludePathPatterns("/","/login");
+    // }
 
     @Bean
     public HiddenHttpMethodFilter hiddenHttpMethodFilter(){

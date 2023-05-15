@@ -1,5 +1,6 @@
 package com.canyan7n.boot2.interceptor;
 
+import lombok.extern.slf4j.Slf4j;
 import org.aopalliance.intercept.Interceptor;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -15,11 +16,14 @@ import javax.servlet.http.HttpSession;
  * @date ：2023/5/14 16:09
  * @description：TODO
  */
+@Slf4j
 public class LoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        log.info("拦截的请求{}" + request.getRequestURI());
         HttpSession session = request.getSession();
         Object loginUser = session.getAttribute("LoginUser");
+        System.out.println(loginUser);
         if (loginUser != null){
             return true;
         }
