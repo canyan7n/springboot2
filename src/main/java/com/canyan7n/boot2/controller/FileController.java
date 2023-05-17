@@ -26,6 +26,7 @@ public class FileController {
                              @RequestPart("photos") MultipartFile[] photos) throws IOException {
         log.info("头像大小{},生活照数{}",headerImg.getSize(),photos.length);
         if (!headerImg.isEmpty()){
+            System.out.println("---");
             String filename = headerImg.getOriginalFilename();
             UUID preName = UUID.randomUUID();
             String postName = filename.substring(filename.lastIndexOf("."));
