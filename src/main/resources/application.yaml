@@ -23,6 +23,7 @@ person:
 
 spring:
   mvc:
+
     hiddenmethod:
       filter:
         enabled: true
@@ -34,3 +35,4 @@ spring:
 server:
   servlet:
     context-path: /
+

@@ -10,6 +10,7 @@ import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
@@ -20,6 +21,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @date ：2023/4/17 21:38
  * @description：主程序类
  */
+@ServletComponentScan
 @SpringBootApplication
 // @ComponentScan(value = "com.canyan7n.boot2.controller")
 //     @SpringBootConfiguration
