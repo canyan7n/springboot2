@@ -14,7 +14,7 @@ import java.io.IOException;
  * @date ：2023/5/18 22:29
  * @description：TODO
  */
-@WebFilter(urlPatterns = "/static/*")
+// @WebFilter(urlPatterns = "/static/*")
 @Slf4j
 public class MyFilter implements Filter {
     @Override
