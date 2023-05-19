@@ -13,7 +13,7 @@ import javax.servlet.annotation.WebListener;
  * @date ：2023/5/18 22:46
  * @description：TODO
  */
-@WebListener
+// @WebListener
 @Slf4j
 public class MyServletContextListener implements ServletContextListener {
     @Override

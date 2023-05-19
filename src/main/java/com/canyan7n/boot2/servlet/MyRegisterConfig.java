@@ -1,6 +1,7 @@
 package com.canyan7n.boot2.servlet;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.cglib.core.MethodWrapper;
 import org.springframework.context.annotation.Bean;
@@ -30,5 +31,11 @@ public class MyRegisterConfig {
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(myFilter);
         filterRegistrationBean.setUrlPatterns(Arrays.asList("/my"));
         return filterRegistrationBean;
+    }
+
+    @Bean
+    public ServletListenerRegistrationBean myListener(){
+        MyServletContextListener myServletContextListener = new MyServletContextListener();
+        return new ServletListenerRegistrationBean(myServletContextListener);
     }
 }
