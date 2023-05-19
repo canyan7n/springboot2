@@ -18,7 +18,7 @@ import java.io.IOException;
  * @date ：2023/5/18 21:39
  * @description：TODO
  */
-@WebServlet(urlPatterns = "/my")
+// @WebServlet(urlPatterns = "/my")
 public class MyServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
