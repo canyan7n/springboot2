@@ -2,8 +2,11 @@ package com.canyan7n.boot2.servlet;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.springframework.cglib.core.MethodWrapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.Arrays;
 
 /**
  * @author ：macheng
@@ -17,12 +20,15 @@ public class MyRegisterConfig {
     @Bean
     public ServletRegistrationBean myServlet(){
         MyServlet myServlet = new MyServlet();
-        return new ServletRegistrationBean(myServlet,"/my");
+        return new ServletRegistrationBean(myServlet,"/my","/my01");
     }
 
     @Bean
     public FilterRegistrationBean myFilter(){
         MyFilter myFilter = new MyFilter();
-        return new FilterRegistrationBean(myFilter,myServlet());
+        // return new FilterRegistrationBean(myFilter,myServlet());
+        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(myFilter);
+        filterRegistrationBean.setUrlPatterns(Arrays.asList("/my"));
+        return filterRegistrationBean;
     }
 }
