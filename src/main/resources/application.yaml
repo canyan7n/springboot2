@@ -26,6 +26,8 @@ spring:
     hiddenmethod:
       filter:
         enabled: true
+#    servlet:
+#      path: /mvc
   #    static-path-pattern: /res/**
   resources:
     static-locations: classpath:/aaa/
@@ -34,4 +36,6 @@ spring:
 server:
   servlet:
     context-path: /
+
+
 
