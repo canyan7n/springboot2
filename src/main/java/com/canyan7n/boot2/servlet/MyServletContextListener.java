@@ -23,7 +23,7 @@ public class MyServletContextListener implements ServletContextListener {
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
-
         log.info("contextInitialized监听到项目销毁");
+        log.info("哪个类" + MyServletContextListener.class.getName());
     }
 }
